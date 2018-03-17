@@ -1,5 +1,5 @@
 aside {
-    width: 200px;
+    min-width: 256px;
     background: #202020;
     box-shadow: 0 0 2px 0 #000;
 }
@@ -12,15 +12,15 @@ file {
     background: #3A3A3A;
     display: block;
     box-sizing: border-box;
-}
 
-file:hover {
-    background: #4A4A4A;
-    cursor: pointer;
-}
-
-file.active {
-    background: #5A5A5A;
+    &:hover {
+        background: #4A4A4A;
+        cursor: pointer;
+    }
+    
+    &.active {
+        background: #5A5A5A;
+    }
 }
 
 header {

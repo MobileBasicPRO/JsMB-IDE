@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import "./Sidebar.css";
+
+import PlusBtn from './PlusBtn';
+
+import "./Sidebar.min.css";
 import "./Icons.css";
 
 class File extends Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
+    // constructor(props) {
+    //     super(props);
+    //     // this.handleClick = this.handleClick.bind(this);
+    // }
 
     handleClick(e) {
         console.log(`You was click ${this.props.file.name}`);
@@ -21,26 +24,35 @@ class File extends Component {
 class Sidebar extends Component {
     constructor(props) {
         super(props);
-        this.handleAddFile = this.handleAddFile.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        // this.handleAddFile = this.handleAddFile.bind(this);
         this.state = {
             files: [{
                 name: "Autorun.bas",
             }]
         };
     }
-    handleAddFile() {
-        var filename = prompt("Filename: ");
-        if(!filename) return;
-        this.setState({
-            files: this.state.files.concat({
-                name: filename
-            })
-        });
+
+    handleClick(filename) {
+        if (!filename) return;
+        console.log(this.state);
+        const {files} = this.state;
+		this.setState({
+			files: files.concat({
+                //FIXME: this.state.files = undefined
+				name: filename
+			})
+		});
     }
+
     render() {
         return (
             <aside>
-                <header>Файлы проекта:<button onClick={this.handleAddFile}>+</button></header>
+                <header>Файлы проекта:
+                    <PlusBtn
+                        handleClick={this.handleClick}
+                    />
+                </header>
                 {this.state.files.map(file => <File file={file} key={file.name} />)}
             </aside>
         );

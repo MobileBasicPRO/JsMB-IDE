@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Sidebar from '../Sidebar/Sidebar';
-import './App.css';
+import Sidebar from '../../components/Sidebar';
+import './App.min.css';
 import CodeMirror from 'react-codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/monokai.css';
 
 //require('../MobileBasic');
 
-require('codemirror/mode/javascript/javascript');
+import 'codemirror/mode/javascript/javascript';
 
-require('../menubar');
+import '../../menubar';
 
 
 class App extends Component {
