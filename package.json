@@ -2,6 +2,8 @@
   "name": "jsmb-ide",
   "version": "0.1.0",
   "private": true,
+  "main": "http://localhost:3000",
+  "node-remote": "http://localhost:3000",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
@@ -45,8 +47,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "npm run build && jsmb build",
-    "oldstart": "node scripts/start.js",
+    "oldstart": "npm run build && jsmb build",
+    "start": "node scripts/start.js",
+    "run": "jsmb .",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
