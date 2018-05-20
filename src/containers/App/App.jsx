@@ -11,6 +11,7 @@ import 'codemirror/mode/javascript/javascript';
 
 import '../../menubar';
 
+require('../../other/jsmb')
 
 class App extends Component {
   render() {
@@ -22,7 +23,7 @@ class App extends Component {
           options={{
             theme: "monokai",
             lineNumbers: true,
-            mode: "text/javascript",
+            mode: "jsmb",
             autoCloseBrackets: true
           }}
         />
